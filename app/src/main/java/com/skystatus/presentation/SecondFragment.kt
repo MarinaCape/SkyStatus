@@ -1,4 +1,4 @@
-package com.skystatus
+package com.skystatus.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.skystatus.R
 import com.skystatus.databinding.FragmentSecondBinding
 
 /**
