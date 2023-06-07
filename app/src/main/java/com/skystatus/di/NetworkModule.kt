@@ -1,12 +1,15 @@
 package com.skystatus.di
 
-import androidx.viewbinding.BuildConfig
+import com.skystatus.BuildConfig
 import com.skystatus.data.service.SettingsService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.HttpUrl
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -31,22 +34,26 @@ class NetworkModule {
             .addInterceptor(interceptor)
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
-            //.addInterceptor(tokenInterceptor(settingsService))
+            .addInterceptor(tokenInterceptor(settingsService))
             .followRedirects(false)
             .build()
     }
 
-/*    private fun tokenInterceptor(settingsService: SettingsService) = Interceptor { chain ->
-        val request = chain.request()
-        val authorization = request.headers["Authorization"].isNullOrEmpty()
-        val requestBuilder = request.newBuilder()
-        settingsService.token?.let {
-            if (authorization) {
-                requestBuilder.addHeader("Authorization", "Bearer $it")
-            }
-        }
+    private fun tokenInterceptor(settingsService: SettingsService) = Interceptor { chain ->
+
+        val original = chain.request()
+        val originalHttpUrl: HttpUrl = original.url
+
+        val url = originalHttpUrl.newBuilder()
+            .addQueryParameter("apikey", BuildConfig.API_URL)
+            .build()
+
+        // Request customization: add request headers
+        val requestBuilder: Request.Builder = original.newBuilder()
+            .url(url)
+
         chain.proceed(requestBuilder.build())
-    }*/
+    }
 
     @Provides
     @Singleton

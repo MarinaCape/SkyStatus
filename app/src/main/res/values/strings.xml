@@ -9,4 +9,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="error_generic_title">Parece que se ha producido un error</string>
+    <string name="error_generic_description">Inténtalo de nuevo más tarde</string>
 </resources>
