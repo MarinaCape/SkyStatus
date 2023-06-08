@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
-        android:id="@+id/iconWeather"
+        android:id="@+id/icon_weather"
         android:layout_width="30sp"
         android:layout_height="30sp"
         android:layout_marginTop="5dp"
@@ -25,12 +25,12 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/degrees_text"
+        android:id="@+id/temperature_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="12º"
         android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iconWeather"
+        app:layout_constraintTop_toBottomOf="@+id/icon_weather"
         app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

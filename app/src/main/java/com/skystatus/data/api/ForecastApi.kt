@@ -1,7 +1,11 @@
 package com.skystatus.data.api
 
 import com.skystatus.data.api.model.CityResponse
+import com.skystatus.data.api.model.daily.DailyForecastResponse
+import com.skystatus.data.api.model.daily.ForecastResponse
+import com.skystatus.data.api.model.hourly.HourlyForecastResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ForecastApi {
@@ -10,4 +14,18 @@ interface ForecastApi {
     suspend fun getCitiesByText(
         @Query("q") search: String,
     ): List<CityResponse>
+
+    @GET("/forecasts/v1/hourly/12hour/{idLocation}")
+    suspend fun get12HoursForecast(
+        @Path("idLocation") location: Int,
+        @Query("details") details: Boolean = true,
+        @Query("metric") metric: Boolean = true,
+    ): List<HourlyForecastResponse>
+
+    @GET("/forecasts/v1/daily/5day/{idLocation}")
+    suspend fun get5DaysForecast(
+        @Path("idLocation") location: Int,
+        @Query("details") details: Boolean = true,
+        @Query("metric") metric: Boolean = true,
+    ): ForecastResponse
 }

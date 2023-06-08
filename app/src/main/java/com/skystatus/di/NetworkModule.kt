@@ -45,7 +45,8 @@ class NetworkModule {
         val originalHttpUrl: HttpUrl = original.url
 
         val url = originalHttpUrl.newBuilder()
-            .addQueryParameter("apikey", BuildConfig.API_URL)
+            .addQueryParameter("apikey", BuildConfig.API_KEY)
+            .addQueryParameter("language", "es-ES")
             .build()
 
         // Request customization: add request headers
@@ -60,7 +61,7 @@ class NetworkModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create())
         .client(okHttpClient)
-        //.baseUrl(BuildConfig.base_url)
+        .baseUrl(BuildConfig.API_URL)
         .build()
 
 }
