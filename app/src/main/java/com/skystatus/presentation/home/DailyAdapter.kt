@@ -43,8 +43,8 @@ class DailyAdapter(
             val iconWeather = itemView.findViewById<ImageView>(R.id.icon_weather)
 
             dayText.text = hour.dateTime.dayOfWeek.getDisplayName(TextStyle.SHORT_STANDALONE, Locale.getDefault()).replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
-            minTemperature.text = hour.temperature.minimum.value.roundToInt().toString()
-            maxTemperature.text = hour.temperature.maximum.value.roundToInt().toString()
+            minTemperature.text = "${hour.temperature.minimum.value.roundToInt()}º"
+            maxTemperature.text = "${hour.temperature.maximum.value.roundToInt()}º"
             windText.text = "${hour.wind.speed.value.roundToInt()} ${hour.wind.speed.unit}"
             rainText.text = "${hour.precipitationProbability} %"
 

@@ -37,7 +37,7 @@ class HourlyAdapter(
             val iconWeather = itemView.findViewById<ImageView>(R.id.icon_weather)
 
             hourText.text = hour.dateTime.formatLocalDateTime()
-            temperatureText.text = hour.temperature.value.roundToInt().toString()
+            temperatureText.text = "${hour.temperature.value.roundToInt()}º"
 
             Glide.with(itemView.context)
                 .load(hour.weatherIcon.icon)

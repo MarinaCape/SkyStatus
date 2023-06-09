@@ -24,11 +24,13 @@ class HomeViewModel @Inject constructor(
 
     private fun initializeConfig() {
         launch {
+            updateViewState(HomeViewState.Loading(true))
             get12HoursForecastUseCase(307145).fold(
                 onSuccess = { hours ->
                     get5DaysForecastUseCase(307145).fold(
                         onSuccess = {
                             updateViewState(HomeViewState.InitializeView(ForecastUI(hours, it)))
+                            updateViewState(HomeViewState.Loading(false))
                         },
                         onFailure = { updateViewState(HomeViewState.Error(it.message ?: "")) }
                     )
