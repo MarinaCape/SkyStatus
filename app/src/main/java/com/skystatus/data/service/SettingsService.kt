@@ -7,12 +7,12 @@ class SettingsService @Inject constructor(
     preferences: SharedPreferences
 ) : PreferenceDataManager(preferences) {
 
-    var token: String?
-        get() = getString(Key.TOKEN)
-        set(value) = setString(Key.TOKEN, value)
+    var cityFavourite: String?
+        get() = getString(Key.CITY_FAVOURITE)
+        set(value) = setString(Key.CITY_FAVOURITE, value)
 
     private enum class Key : PreferenceKey {
-        TOKEN;
+        CITY_FAVOURITE;
 
         override fun keyString() = name
     }

@@ -1,4 +1,4 @@
-package com.skystatus.presentation
+package com.skystatus.presentation.main
 
 import android.os.Bundle
 import android.view.Menu
@@ -7,7 +7,6 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import com.skystatus.R
 import com.skystatus.databinding.ActivityMainBinding
 import com.skystatus.presentation.core.BaseActivity

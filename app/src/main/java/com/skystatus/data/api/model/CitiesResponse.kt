@@ -1,13 +1,21 @@
 package com.skystatus.data.api.model
 
+import com.squareup.moshi.Json
+
 data class CityResponse(
-    val key: String,
-    val type: String,
-    val localizedName: String,
-    val country: CountryResponse,
-    val administrativeAreaResponse: AdministrativeAreaResponse,
+    @field:Json(name = "Key") val key: String,
+    @field:Json(name = "Type") val type: String,
+    @field:Json(name = "LocalizedName") val localizedName: String,
+    @field:Json(name = "Country") val country: CountryResponse?,
+    @field:Json(name = "AdministrativeAreaResponse") val administrativeAreaResponse: AdministrativeAreaResponse?,
 )
 
-data class CountryResponse(val id: String, val localizedName: String)
+data class CountryResponse(
+    @field:Json(name = "ID") val id: String,
+    @field:Json(name = "LocalizedName") val localizedName: String,
+)
 
-data class AdministrativeAreaResponse(val id: String, val localizedName: String)
+data class AdministrativeAreaResponse(
+    @field:Json(name = "ID") val id: String,
+    @field:Json(name = "LocalizedName") val localizedName: String,
+)

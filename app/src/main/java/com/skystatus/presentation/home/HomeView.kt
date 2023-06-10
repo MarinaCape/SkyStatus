@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.skystatus.databinding.HomeFragmentBinding
-import com.skystatus.domain.entity.HourlyForecast
+import com.skystatus.domain.entity.City
 import com.skystatus.presentation.core.BaseFragment
+import com.skystatus.presentation.home.menu.BottomSheetMenu
 import com.skystatus.presentation.home.model.ForecastUI
+import com.skystatus.presentation.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.roundToInt
 
@@ -17,6 +21,7 @@ import kotlin.math.roundToInt
 class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>() {
 
     override val viewModel: HomeViewModel by viewModels()
+    private val args: HomeViewArgs by navArgs()
 
     override fun viewBinding(
         inflater: LayoutInflater,
@@ -25,7 +30,14 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.onEvent(HomeEvent.InitializeView)
+        //viewModel.onEvent(HomeEvent.InitializeView(args.cityArg))
+        toggleProgress(false)
+        binding.menuIcon.setOnClickListener {
+            BottomSheetMenu(cityOption = {
+                val action = HomeViewDirections.homeToLocation()
+                findNavController().navigate(action)
+            }, sunsetOption = {}).show(this@HomeView)
+        }
     }
 
     override fun render(viewState: HomeViewState) = when (viewState) {
@@ -36,8 +48,11 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
 
     private fun initialConfiguration(forecast: ForecastUI) {
         binding.apply {
+            if(args.cityArg != null) {
+                locationText.text = "${(args.cityArg as City).localizedName}, ${(args.cityArg as City).country.localizedName}"
+            }
             if(forecast.hours.isNotEmpty()){
-                currentDegreeText.text = forecast.hours[0].temperature.value.roundToInt().toString()
+                currentDegreeText.text = "${forecast.hours[0].temperature.value.roundToInt()}º"
                 shortPhraseText.text = forecast.hours[0].iconPhrase
                 carouselHours.adapter = HourlyAdapter(forecast.hours)
             }
@@ -45,6 +60,13 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
             maxDegreeText.text = "Max. ${forecast.dailyForecast[0].temperature.maximum.value.roundToInt()}º"
 
             recyclerDays.adapter = DailyAdapter(forecast.dailyForecast)
+
+            binding.menuIcon.setOnClickListener {
+                BottomSheetMenu(cityOption = {
+                    val action = HomeViewDirections.homeToLocation()
+                    findNavController().navigate(action)
+                }, sunsetOption = {}).show(this@HomeView)
+            }
         }
     }
 

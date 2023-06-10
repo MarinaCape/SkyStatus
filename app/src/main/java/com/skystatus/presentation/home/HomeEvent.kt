@@ -1,7 +1,8 @@
 package com.skystatus.presentation.home
 
+import com.skystatus.domain.entity.City
 import com.skystatus.presentation.core.Event
 
 sealed class HomeEvent : Event {
-    object InitializeView : HomeEvent()
+    class InitializeView(val city: City?) : HomeEvent()
 }

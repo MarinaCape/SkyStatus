@@ -15,10 +15,10 @@ fun List<CityResponse>.toDomain() = map { item ->
         item.key,
         item.type,
         item.localizedName,
-        Country(item.country.id, item.country.localizedName),
+        Country(item.country?.id?:"", item.country?.localizedName?:""),
         AdministrativeArea(
-            item.administrativeAreaResponse.id,
-            item.administrativeAreaResponse.localizedName
+            item.administrativeAreaResponse?.id?:"",
+            item.administrativeAreaResponse?.localizedName?:""
         ),
     )
 }

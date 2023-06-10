@@ -1,8 +1,6 @@
-package com.skystatus.presentation
+package com.skystatus.presentation.main
 
 import com.skystatus.data.service.SettingsService
-import com.skystatus.presentation.MainEvent
-import com.skystatus.presentation.MainViewState
 import com.skystatus.presentation.core.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

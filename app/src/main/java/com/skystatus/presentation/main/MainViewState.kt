@@ -1,4 +1,4 @@
-package com.skystatus.presentation
+package com.skystatus.presentation.main
 
 import com.skystatus.presentation.core.ViewState
 
