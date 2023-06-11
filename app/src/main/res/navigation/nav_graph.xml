@@ -24,6 +24,15 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim">
 
         </action>
+
+        <action
+            android:id="@+id/homeToSunset"
+            app:destination="@id/sunset_view"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
     </fragment>
 
     <fragment
@@ -45,6 +54,15 @@
                 app:argType="com.skystatus.domain.entity.City"
                 app:nullable="true"/>
         </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/sunset_view"
+        android:name="com.skystatus.presentation.sunset.SunsetView"
+        android:label="@string/sunset_fragment_label"
+        tools:layout="@layout/sunset_fragment">
+
 
     </fragment>
 </navigation>

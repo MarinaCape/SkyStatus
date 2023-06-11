@@ -1,7 +1,7 @@
 package com.skystatus.presentation.location
 
 import com.skystatus.domain.core.fold
-import com.skystatus.domain.interactor.GetSearchCitiesUseCase
+import com.skystatus.domain.interactor.forecast.GetSearchCitiesUseCase
 import com.skystatus.presentation.core.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

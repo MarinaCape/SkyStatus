@@ -36,7 +36,10 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
             BottomSheetMenu(cityOption = {
                 val action = HomeViewDirections.homeToLocation()
                 findNavController().navigate(action)
-            }, sunsetOption = {}).show(this@HomeView)
+            }, sunsetOption = {
+                val action = HomeViewDirections.homeToSunset()
+                findNavController().navigate(action)
+            }).show(this@HomeView)
         }
     }
 
@@ -65,7 +68,10 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
                 BottomSheetMenu(cityOption = {
                     val action = HomeViewDirections.homeToLocation()
                     findNavController().navigate(action)
-                }, sunsetOption = {}).show(this@HomeView)
+                }, sunsetOption = {
+                    val action = HomeViewDirections.homeToSunset()
+                    findNavController().navigate(action)
+                }).show(this@HomeView)
             }
         }
     }

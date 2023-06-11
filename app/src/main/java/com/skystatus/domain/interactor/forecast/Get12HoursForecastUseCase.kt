@@ -1,4 +1,4 @@
-package com.skystatus.domain.interactor
+package com.skystatus.domain.interactor.forecast
 
 import com.skystatus.domain.core.UseCase
 import com.skystatus.domain.entity.City

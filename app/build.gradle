@@ -28,10 +28,16 @@ android {
 
             buildConfigField("String", "API_URL", API_URL)
             buildConfigField("String", "API_KEY", API_KEY)
+
+            buildConfigField("String", "API_URL_SUNSET", API_URL_SUNSET)
+            buildConfigField("String", "API_KEY_SUNSET", API_KEY_SUNSET)
         }
         debug {
             buildConfigField("String", "API_URL", API_URL)
             buildConfigField("String", "API_KEY", API_KEY)
+
+            buildConfigField("String", "API_URL_SUNSET", API_URL_SUNSET)
+            buildConfigField("String", "API_KEY_SUNSET", API_KEY_SUNSET)
         }
     }
     compileOptions {

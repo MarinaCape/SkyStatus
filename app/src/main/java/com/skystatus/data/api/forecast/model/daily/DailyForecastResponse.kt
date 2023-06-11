@@ -1,4 +1,4 @@
-package com.skystatus.data.api.model.daily
+package com.skystatus.data.api.forecast.model.daily
 
 import com.squareup.moshi.Json
 

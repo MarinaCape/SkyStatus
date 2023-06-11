@@ -1,9 +1,8 @@
-package com.skystatus.data.api
+package com.skystatus.data.api.forecast
 
-import com.skystatus.data.api.model.CityResponse
-import com.skystatus.data.api.model.daily.DailyForecastResponse
-import com.skystatus.data.api.model.daily.ForecastResponse
-import com.skystatus.data.api.model.hourly.HourlyForecastResponse
+import com.skystatus.data.api.forecast.model.CityResponse
+import com.skystatus.data.api.forecast.model.daily.ForecastResponse
+import com.skystatus.data.api.forecast.model.hourly.HourlyForecastResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

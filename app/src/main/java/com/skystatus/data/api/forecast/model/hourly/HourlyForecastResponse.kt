@@ -1,4 +1,4 @@
-package com.skystatus.data.api.model.hourly
+package com.skystatus.data.api.forecast.model.hourly
 
 data class HourlyForecastResponse(
     val Ceiling: UnitQuantityResponse?,

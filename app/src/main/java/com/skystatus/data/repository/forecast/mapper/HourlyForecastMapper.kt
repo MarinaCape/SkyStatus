@@ -1,6 +1,6 @@
-package com.skystatus.data.repository.mapper
+package com.skystatus.data.repository.forecast.mapper
 
-import com.skystatus.data.api.model.hourly.HourlyForecastResponse
+import com.skystatus.data.api.forecast.model.hourly.HourlyForecastResponse
 import com.skystatus.domain.entity.Direction
 import com.skystatus.domain.entity.HourlyForecast
 import com.skystatus.domain.entity.IconWeatherType
