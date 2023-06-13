@@ -19,17 +19,23 @@ class HomeViewModel @Inject constructor(
 
     override fun onEvent(event: HomeEvent) = when (event) {
         is HomeEvent.InitializeView -> initializeConfig(event.city)
+        is HomeEvent.FavouriteLocation -> setFavouriteLocation(event.key)
     }
 
     private fun initializeConfig(city: City?) {
         launch {
             val idCity = if (city?.key?.isNotEmpty() != false)
                 city?.key?.toInt() ?:307145
-            else /*settingsService.cityFavourite?.toInt()?:*/ 307145
+            else settingsService.cityFavourite?.toInt()
+
+            if(idCity?.toString() == settingsService.cityFavourite){
+                updateViewState(HomeViewState.ChangeFavIcon(true))
+            }
+
             updateViewState(HomeViewState.Loading(true))
-            get12HoursForecastUseCase(idCity).fold(
+            get12HoursForecastUseCase(idCity?:307145).fold(
                 onSuccess = { hours ->
-                    get5DaysForecastUseCase(idCity).fold(
+                    get5DaysForecastUseCase(idCity?:307145).fold(
                         onSuccess = {
                             updateViewState(HomeViewState.InitializeView(ForecastUI(hours, it)))
                             updateViewState(HomeViewState.Loading(false))
@@ -40,5 +46,10 @@ class HomeViewModel @Inject constructor(
                 onFailure = { updateViewState(HomeViewState.Error(it.message ?: "")) }
             )
         }
+    }
+
+    private fun setFavouriteLocation(key: String?) {
+        settingsService.cityFavourite = key?: "307145"
+        updateViewState(HomeViewState.ChangeFavIcon(true))
     }
 }

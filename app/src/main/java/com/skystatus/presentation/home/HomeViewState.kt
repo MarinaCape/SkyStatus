@@ -7,4 +7,5 @@ sealed class HomeViewState : ViewState {
     class InitializeView(val forecast: ForecastUI) : HomeViewState()
     class Error(val message: String): HomeViewState()
     class Loading(val show: Boolean): HomeViewState()
+    class ChangeFavIcon(val filled: Boolean): HomeViewState()
 }

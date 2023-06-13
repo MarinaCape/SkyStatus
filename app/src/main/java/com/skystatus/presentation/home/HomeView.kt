@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.skystatus.R
 import com.skystatus.databinding.HomeFragmentBinding
 import com.skystatus.domain.entity.City
 import com.skystatus.presentation.core.BaseFragment
+import com.skystatus.presentation.home.detail.BottomSheetDetail
 import com.skystatus.presentation.home.menu.BottomSheetMenu
 import com.skystatus.presentation.home.model.ForecastUI
 import com.skystatus.presentation.utils.show
@@ -30,8 +33,8 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //viewModel.onEvent(HomeEvent.InitializeView(args.cityArg))
-        toggleProgress(false)
+        viewModel.onEvent(HomeEvent.InitializeView(args.cityArg))
+        /*toggleProgress(false)
         binding.menuIcon.setOnClickListener {
             BottomSheetMenu(cityOption = {
                 val action = HomeViewDirections.homeToLocation()
@@ -40,13 +43,14 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
                 val action = HomeViewDirections.homeToSunset()
                 findNavController().navigate(action)
             }).show(this@HomeView)
-        }
+        }*/
     }
 
     override fun render(viewState: HomeViewState) = when (viewState) {
         is HomeViewState.InitializeView -> initialConfiguration(viewState.forecast)
         is HomeViewState.Error -> toastInfo(viewState.message)
         is HomeViewState.Loading -> toggleProgress(viewState.show)
+        is HomeViewState.ChangeFavIcon -> fillFabIcon(viewState.filled)
     }
 
     private fun initialConfiguration(forecast: ForecastUI) {
@@ -62,7 +66,9 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
             minDegreeText.text = "Min. ${forecast.dailyForecast[0].temperature.minimum.value.roundToInt()}º"
             maxDegreeText.text = "Max. ${forecast.dailyForecast[0].temperature.maximum.value.roundToInt()}º"
 
-            recyclerDays.adapter = DailyAdapter(forecast.dailyForecast)
+            recyclerDays.adapter = DailyAdapter(forecast.dailyForecast){
+                BottomSheetDetail(it).show(this@HomeView)
+            }
 
             binding.menuIcon.setOnClickListener {
                 BottomSheetMenu(cityOption = {
@@ -72,6 +78,10 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
                     val action = HomeViewDirections.homeToSunset()
                     findNavController().navigate(action)
                 }).show(this@HomeView)
+            }
+
+            binding.fabIcon.setOnClickListener {
+                viewModel.onEvent(HomeEvent.FavouriteLocation(args.cityArg?.key))
             }
         }
     }
@@ -84,5 +94,13 @@ class HomeView : BaseFragment<HomeFragmentBinding, HomeViewModel, HomeViewState>
     private fun toastInfo(msg: String) {
         Toast.makeText(requireContext(), msg, Toast.LENGTH_LONG).show()
         toggleProgress(false)
+    }
+
+    private fun fillFabIcon(filled: Boolean) {
+        if(filled){
+            binding.fabIcon.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_star_filled))
+        }else{
+            binding.fabIcon.setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_start_empty))
+        }
     }
 }

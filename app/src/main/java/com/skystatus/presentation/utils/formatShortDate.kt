@@ -27,3 +27,6 @@ fun String.fullDateToLocalDateTime(): LocalDateTime {
 
 fun LocalDateTime.formatLocalDateTime(): String =
     DateTimeFormatter.ofPattern("HH").format(this)
+
+fun LocalDateTime.formatLocalDateTimeHours(): String =
+    DateTimeFormatter.ofPattern("HH:mm").format(this)

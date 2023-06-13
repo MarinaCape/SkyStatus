@@ -37,10 +37,25 @@ fun List<DailyForecastResponse>.toDomain() = map { item ->
             ),
             UnitQuantity(item.day.wind.speed.value ?: 0.0, item.day.wind.speed.unit ?: "")
         ),
-        Sun(item.sun.rise, item.sun.set),
+        UnitQuantity(
+            item.day.windGust?.speed?.value ?: 0.0,
+            item.day.windGust?.speed?.unit ?: ""
+        ),
+        Sun(item.sun.rise.fullDateToLocalDateTime(), item.sun.set.fullDateToLocalDateTime()),
         item.day.precipitationProbability,
+        item.day.thunderstormProbability,
         item.day.snowProbability,
         item.day.hoursOfPrecipitation,
         item.day.hoursOfRain,
+        item.day.cloudCover,
+        UnitQuantity(
+            item.day.evapotranspiration.value ?: 0.0,
+            item.day.evapotranspiration.unit ?: ""
+        ),
+        UnitQuantity(
+            item.day.rain.value ?: 0.0,
+            item.day.rain.unit ?: ""
+        ),
+        item.day.relativeHumidity
     )
 }

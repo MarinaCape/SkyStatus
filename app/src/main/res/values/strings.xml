@@ -12,4 +12,17 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="error_generic_title">Parece que se ha producido un error</string>
     <string name="error_generic_description">Inténtalo de nuevo más tarde</string>
+
+    <string name="dawn_type_sunrise">Amanecer</string>
+    <string name="dawn_type_sunset">Atardecer</string>
+
+    <string name="dawn_title_poor">Deficiente</string>
+    <string name="dawn_title_fair">Regular</string>
+    <string name="dawn_title_good">Bueno</string>
+    <string name="dawn_title_great">Genial</string>
+
+    <string name="dawn_description_poor">Poco o ningún color, con precipitaciones o una gruesa capa de nubes que a menudo bloquea la vista directa del sol.</string>
+    <string name="dawn_description_fair">Algo de color por un corto tiempo, con condiciones que van desde mayormente nublado o brumoso hasta despejado, con poca o ninguna nube en todos los niveles.</string>
+    <string name="dawn_description_good">Una buena cantidad de color, a menudo multicolor, que dura una cantidad considerable de tiempo. A menudo causado por nubes dispersas en múltiples niveles.</string>
+    <string name="dawn_description_great">Color extremadamente vibrante que dura 30 minutos o más. A menudo causado por múltiples arreglos de nubes en múltiples niveles, en transición a través de múltiples etapas de colores vivos.</string>
 </resources>

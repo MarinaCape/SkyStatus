@@ -65,6 +65,20 @@
                     android:paddingHorizontal="24dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/fabIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_start_empty"
+                    android:paddingHorizontal="15dp"
+                    app:layout_constraintEnd_toStartOf="@+id/location_text"
+                    app:layout_constraintTop_toTopOf="@+id/location_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/location_text"
+                    />
+
                 <TextView
                     android:id="@+id/location_text"
                     android:layout_width="wrap_content"

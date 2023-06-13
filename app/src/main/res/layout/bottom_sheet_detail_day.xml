@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp"
+    android:paddingVertical="20dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/windLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/wind_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Viento"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/windIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_wind"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wind_title" />
+
+        <TextView
+            android:id="@+id/wind_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="8km/h"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/windIcon"
+            app:layout_constraintTop_toTopOf="@+id/windIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/snowLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windLayout">
+
+        <TextView
+            android:id="@+id/snow_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nieve"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/snowIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_snow_cm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/snow_title" />
+
+        <TextView
+            android:id="@+id/snow_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="8cm"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/snowIcon"
+            app:layout_constraintStart_toEndOf="@+id/snowIcon"
+            app:layout_constraintTop_toTopOf="@+id/snowIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stormLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snowLayout">
+
+        <TextView
+            android:id="@+id/storm_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prob. tormenta"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/stormIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_storm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storm_title" />
+
+        <TextView
+            android:id="@+id/storm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="80%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/stormIcon"
+            app:layout_constraintStart_toEndOf="@+id/stormIcon"
+            app:layout_constraintTop_toTopOf="@+id/stormIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sunsetLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stormLayout">
+
+        <TextView
+            android:id="@+id/sunset_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atardecer"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/sunsetIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_sunset_detail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunset_title" />
+
+        <TextView
+            android:id="@+id/sunset_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="80%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sunsetIcon"
+            app:layout_constraintStart_toEndOf="@+id/sunsetIcon"
+            app:layout_constraintTop_toTopOf="@+id/sunsetIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/windGutLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/windGut_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rachas"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/windGutIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_wind_gut"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/windGut_title" />
+
+        <TextView
+            android:id="@+id/windGut_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="8km/h"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/windGutIcon"
+            app:layout_constraintStart_toEndOf="@+id/windGutIcon"
+            app:layout_constraintTop_toTopOf="@+id/windGutIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cloudLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintStart_toStartOf="@+id/windGutLayout"
+        app:layout_constraintTop_toBottomOf="@+id/windGutLayout">
+
+        <TextView
+            android:id="@+id/cloud_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nubes"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cloudIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_cloud"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cloud_title" />
+
+        <TextView
+            android:id="@+id/cloud_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="8%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cloudIcon"
+            app:layout_constraintStart_toEndOf="@+id/cloudIcon"
+            app:layout_constraintTop_toTopOf="@+id/cloudIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/humedityLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintStart_toStartOf="@+id/windGutLayout"
+        app:layout_constraintTop_toBottomOf="@+id/cloudLayout">
+
+        <TextView
+            android:id="@+id/humedity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horas total"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/humedityIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_humedity"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humedity_title" />
+
+        <TextView
+            android:id="@+id/humedity_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="80%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/humedityIcon"
+            app:layout_constraintStart_toEndOf="@+id/humedityIcon"
+            app:layout_constraintTop_toTopOf="@+id/humedityIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sunriseLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintStart_toStartOf="@+id/windGutLayout"
+        app:layout_constraintTop_toBottomOf="@+id/humedityLayout">
+
+        <TextView
+            android:id="@+id/sunrise_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amanecer"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/sunriseIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_sunrise"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sunrise_title" />
+
+        <TextView
+            android:id="@+id/sunrise_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="80%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/sunriseIcon"
+            app:layout_constraintStart_toEndOf="@+id/sunriseIcon"
+            app:layout_constraintTop_toTopOf="@+id/sunriseIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/realTemperatureLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/realTemperature_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensación térmica"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/realTemperatureMinIcon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_cold_temperature"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/realTemperature_title" />
+
+        <TextView
+            android:id="@+id/realTemperatureMin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="10º"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/realTemperatureMinIcon"
+            app:layout_constraintStart_toEndOf="@+id/realTemperatureMinIcon"
+            app:layout_constraintTop_toTopOf="@+id/realTemperatureMinIcon" />
+
+        <ImageView
+            android:id="@+id/realTemperatureMaxIcon"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_temperature"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/realTemperatureMin_text"
+            app:layout_constraintTop_toBottomOf="@+id/realTemperature_title" />
+
+        <TextView
+            android:id="@+id/realTemperatureMax_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="22º"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/realTemperatureMaxIcon"
+            app:layout_constraintStart_toEndOf="@+id/realTemperatureMaxIcon"
+            app:layout_constraintTop_toTopOf="@+id/realTemperatureMaxIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/probability_rain_Layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@+id/windLayout">
+
+        <TextView
+            android:id="@+id/probabilityRain_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prob. precipitación"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/probabilityRainIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_rain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/probabilityRain_title" />
+
+        <TextView
+            android:id="@+id/probability_rain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="8cm"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/probabilityRainIcon"
+            app:layout_constraintStart_toEndOf="@+id/probabilityRainIcon"
+            app:layout_constraintTop_toTopOf="@+id/probabilityRainIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintStart_toStartOf="@+id/probability_rain_Layout"
+        app:layout_constraintTop_toBottomOf="@+id/snowLayout">
+
+        <TextView
+            android:id="@+id/rain_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lluvia"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/rainIcon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_moderate_rain"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rain_title" />
+
+        <TextView
+            android:id="@+id/rain_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="80%"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rainIcon"
+            app:layout_constraintStart_toEndOf="@+id/rainIcon"
+            app:layout_constraintTop_toTopOf="@+id/rainIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

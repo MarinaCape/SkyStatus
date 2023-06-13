@@ -22,13 +22,12 @@ class SunsetViewModel @Inject constructor(
             updateViewState(SunsetViewState.Loading(true))
             getSunsetQualityUseCase("40.7933949,-77.8600012").fold(
                 onSuccess = {
-                    updateViewState(SunsetViewState.InitializeView)
+                    updateViewState(SunsetViewState.InitializeView(it))
                     updateViewState(SunsetViewState.Loading(false))
                 },
                 onFailure = { updateViewState(SunsetViewState.Error(it.message ?: "")) }
             )
         }
-        updateViewState(SunsetViewState.InitializeView)
     }
 
 }

@@ -43,9 +43,13 @@ data class DayResponse(
     @field:Json(name = "RainProbability") val rainProbability: Int,
     @field:Json(name = "SnowProbability") val snowProbability: Int,
     @field:Json(name = "Wind") val wind: WindResponse,
+    @field:Json(name = "WindGust") val windGust: WindGustResponse?,
     @field:Json(name = "Rain") val rain: UnitQuantityResponse,
     @field:Json(name = "HoursOfPrecipitation") val hoursOfPrecipitation: Int,
     @field:Json(name = "HoursOfRain") val hoursOfRain: Int,
+    @field:Json(name = "CloudCover") val cloudCover: Int,
+    @field:Json(name = "RelativeHumidity") val relativeHumidity: Int,
+    @field:Json(name = "Evapotranspiration") val evapotranspiration: UnitQuantityResponse,
 )
 
 data class WindResponse(
