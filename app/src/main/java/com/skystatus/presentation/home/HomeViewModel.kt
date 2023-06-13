@@ -1,5 +1,6 @@
 package com.skystatus.presentation.home
 
+import android.location.LocationRequest
 import com.skystatus.data.service.SettingsService
 import com.skystatus.domain.core.fold
 import com.skystatus.domain.entity.City
