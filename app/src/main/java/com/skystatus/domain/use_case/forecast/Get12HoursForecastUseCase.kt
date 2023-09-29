@@ -1,8 +1,7 @@
-package com.skystatus.domain.interactor.forecast
+package com.skystatus.domain.use_case.forecast
 
 import com.skystatus.domain.core.UseCase
-import com.skystatus.domain.entity.City
-import com.skystatus.domain.entity.HourlyForecast
+import com.skystatus.domain.model.HourlyForecast
 import com.skystatus.domain.repository.ForecastRepository
 import javax.inject.Inject
 

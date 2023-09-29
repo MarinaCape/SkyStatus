@@ -27,7 +27,7 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel<VS, *>, VS : Vie
     protected abstract val viewModel: VM
     protected lateinit var binding: B
 
-    internal var progressDialog: ProgressDialog? = null
+    private var progressDialog: ProgressDialog? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,17 +40,15 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel<VS, *>, VS : Vie
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.viewState.launchWhenStarted(viewLifecycleOwner)
+        viewModel.viewState.launchWhenStarted()
     }
 
 
-    private fun SharedFlow<VS?>.launchWhenStarted(lifecycleOwner: LifecycleOwner) =
-        with(lifecycleOwner) {
-            lifecycleScope.launch {
-                repeatOnLifecycle(Lifecycle.State.STARTED) {
-                    this@launchWhenStarted.collect {
-                        it?.let { render(it) }
-                    }
+    private fun SharedFlow<VS?>.launchWhenStarted() =
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                this@launchWhenStarted.collect {
+                    it?.let { render(it) }
                 }
             }
         }
@@ -72,16 +70,6 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel<VS, *>, VS : Vie
         )
     }
 
-    fun showSuccessDialog(msg: Int, action: () -> Unit = {}) {
-       /* val dialog =
-            InfoDialog(R.drawable.ic_check_simple, msg)
-        dialog.setOnClickButtonListener {
-            dialog.dismiss()
-            action()
-        }
-        dialog.isCancelable = false
-        dialog.show(parentFragmentManager)*/
-    }
 
     fun showMessage(root: ViewGroup, message: String, description: String, @DrawableRes icon: Int) {
         /*TopSnackBar.make(

@@ -3,9 +3,9 @@ package com.skystatus.data.repository.forecast
 import com.skystatus.data.api.ClientGenerator
 import com.skystatus.data.api.forecast.ForecastApi
 import com.skystatus.data.repository.forecast.mapper.toDomain
-import com.skystatus.domain.entity.City
-import com.skystatus.domain.entity.DailyForecast
-import com.skystatus.domain.entity.HourlyForecast
+import com.skystatus.domain.model.City
+import com.skystatus.domain.model.DailyForecast
+import com.skystatus.domain.model.HourlyForecast
 import com.skystatus.domain.repository.ForecastRepository
 import javax.inject.Inject
 

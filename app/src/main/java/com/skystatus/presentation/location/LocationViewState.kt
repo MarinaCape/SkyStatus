@@ -1,8 +1,7 @@
 package com.skystatus.presentation.location
 
-import com.skystatus.domain.entity.City
+import com.skystatus.domain.model.City
 import com.skystatus.presentation.core.ViewState
-import com.skystatus.presentation.home.model.ForecastUI
 
 sealed class LocationViewState : ViewState {
     object InitializeView: LocationViewState()

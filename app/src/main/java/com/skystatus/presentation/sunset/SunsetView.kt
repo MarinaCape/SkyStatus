@@ -6,22 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.skystatus.R
-import com.skystatus.databinding.HomeFragmentBinding
-import com.skystatus.databinding.LocationFragmentBinding
 import com.skystatus.databinding.SunsetFragmentBinding
-import com.skystatus.domain.entity.City
-import com.skystatus.domain.entity.HourlyForecast
-import com.skystatus.domain.entity.Sunset
+import com.skystatus.domain.model.Sunset
 import com.skystatus.presentation.core.BaseFragment
-import com.skystatus.presentation.home.HomeViewDirections
-import com.skystatus.presentation.home.menu.BottomSheetMenu
-import com.skystatus.presentation.home.model.ForecastUI
 import com.skystatus.presentation.utils.formatLocalDateTimeHours
-import com.skystatus.presentation.utils.show
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.roundToInt
 

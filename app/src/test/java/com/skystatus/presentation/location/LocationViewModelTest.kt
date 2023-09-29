@@ -1,16 +1,9 @@
 package com.skystatus.presentation.location
 
-import android.provider.CallLog.Locations
 import app.cash.turbine.test
-import com.skystatus.data.service.SettingsService
-import com.skystatus.domain.core.failureOf
 import com.skystatus.domain.core.successOf
-import com.skystatus.domain.entity.City
-import com.skystatus.domain.entity.DailyForecast
-import com.skystatus.domain.entity.HourlyForecast
-import com.skystatus.domain.interactor.forecast.Get12HoursForecastUseCase
-import com.skystatus.domain.interactor.forecast.Get5DaysForecastUseCase
-import com.skystatus.domain.interactor.forecast.GetSearchCitiesUseCase
+import com.skystatus.domain.model.City
+import com.skystatus.domain.use_case.forecast.GetSearchCitiesUseCase
 import com.skystatus.utils.TestUtils
 import io.kotest.matchers.should
 import io.kotest.matchers.types.instanceOf
@@ -20,7 +13,6 @@ import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.mockito.kotlin.any
 
 class LocationViewModelTest : TestUtils() {
 

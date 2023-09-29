@@ -1,6 +1,6 @@
 package com.skystatus.di
 
-import com.skystatus.data.api.ApiClientGenerator
+import com.skystatus.data.api.ApiClientForecastGenerator
 import com.skystatus.data.api.ApiClientSunsetGenerator
 import com.skystatus.data.repository.forecast.ForecastRepositoryImpl
 import com.skystatus.data.repository.sunset.SunsetRepositoryImpl
@@ -18,7 +18,7 @@ class DataModule {
 
     @Provides
     @Singleton
-    fun provideForecastRepository(clientGenerator: ApiClientGenerator): ForecastRepository =
+    fun provideForecastRepository(clientGenerator: ApiClientForecastGenerator): ForecastRepository =
         ForecastRepositoryImpl(clientGenerator)
 
     @Provides

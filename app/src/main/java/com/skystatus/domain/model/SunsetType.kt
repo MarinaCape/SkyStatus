@@ -1,4 +1,4 @@
-package com.skystatus.domain.entity
+package com.skystatus.domain.model
 
 import com.skystatus.R
 

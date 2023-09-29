@@ -1,9 +1,9 @@
 package com.skystatus.data.repository.forecast.mapper
 
 import com.skystatus.data.api.forecast.model.CityResponse
-import com.skystatus.domain.entity.AdministrativeArea
-import com.skystatus.domain.entity.City
-import com.skystatus.domain.entity.Country
+import com.skystatus.domain.model.AdministrativeArea
+import com.skystatus.domain.model.City
+import com.skystatus.domain.model.Country
 
 fun List<CityResponse>.toDomain() = map { item ->
     City(

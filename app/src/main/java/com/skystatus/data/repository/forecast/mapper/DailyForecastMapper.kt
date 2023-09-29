@@ -1,13 +1,13 @@
 package com.skystatus.data.repository.forecast.mapper
 
 import com.skystatus.data.api.forecast.model.daily.DailyForecastResponse
-import com.skystatus.domain.entity.DailyForecast
-import com.skystatus.domain.entity.Direction
-import com.skystatus.domain.entity.IconWeatherType
-import com.skystatus.domain.entity.Sun
-import com.skystatus.domain.entity.Temperature
-import com.skystatus.domain.entity.UnitQuantity
-import com.skystatus.domain.entity.Wind
+import com.skystatus.domain.model.DailyForecast
+import com.skystatus.domain.model.Direction
+import com.skystatus.domain.model.IconWeatherType
+import com.skystatus.domain.model.Sun
+import com.skystatus.domain.model.Temperature
+import com.skystatus.domain.model.UnitQuantity
+import com.skystatus.domain.model.Wind
 import com.skystatus.presentation.utils.fullDateToLocalDateTime
 
 fun List<DailyForecastResponse>.toDomain() = map { item ->

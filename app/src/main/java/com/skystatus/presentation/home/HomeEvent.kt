@@ -1,6 +1,6 @@
 package com.skystatus.presentation.home
 
-import com.skystatus.domain.entity.City
+import com.skystatus.domain.model.City
 import com.skystatus.presentation.core.Event
 
 sealed class HomeEvent : Event {

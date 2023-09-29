@@ -25,4 +25,7 @@
     <string name="dawn_description_fair">Algo de color por un corto tiempo, con condiciones que van desde mayormente nublado o brumoso hasta despejado, con poca o ninguna nube en todos los niveles.</string>
     <string name="dawn_description_good">Una buena cantidad de color, a menudo multicolor, que dura una cantidad considerable de tiempo. A menudo causado por nubes dispersas en múltiples niveles.</string>
     <string name="dawn_description_great">Color extremadamente vibrante que dura 30 minutos o más. A menudo causado por múltiples arreglos de nubes en múltiples niveles, en transición a través de múltiples etapas de colores vivos.</string>
+
+    <string name="min">Min.</string>
+    <string name="max">Max.</string>
 </resources>

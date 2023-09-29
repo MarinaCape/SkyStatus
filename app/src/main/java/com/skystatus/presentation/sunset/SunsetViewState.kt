@@ -1,6 +1,6 @@
 package com.skystatus.presentation.sunset
 
-import com.skystatus.domain.entity.Sunset
+import com.skystatus.domain.model.Sunset
 import com.skystatus.presentation.core.ViewState
 
 sealed class SunsetViewState : ViewState {

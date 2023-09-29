@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.skystatus.R
-import com.skystatus.domain.entity.City
+import com.skystatus.domain.model.City
 
 class LocationAdapter(
     private val list: List<City>,

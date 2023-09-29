@@ -1,9 +1,9 @@
 package com.skystatus.data.repository.sunset.mapper
 
 import com.skystatus.data.api.sunset.model.SunsetResponse
-import com.skystatus.domain.entity.DawnType
-import com.skystatus.domain.entity.Sunset
-import com.skystatus.domain.entity.SunsetType
+import com.skystatus.domain.model.DawnType
+import com.skystatus.domain.model.Sunset
+import com.skystatus.domain.model.SunsetType
 import com.skystatus.presentation.utils.fullDateToLocalDateTime
 
 fun SunsetResponse.toDomain() =

@@ -1,7 +1,6 @@
 package com.skystatus.domain.forecast
 
-import com.skystatus.domain.interactor.forecast.Get12HoursForecastUseCase
-import com.skystatus.domain.interactor.forecast.Get5DaysForecastUseCase
+import com.skystatus.domain.use_case.forecast.Get12HoursForecastUseCase
 import com.skystatus.domain.repository.ForecastRepository
 import com.skystatus.utils.TestUtils
 import io.mockk.coEvery

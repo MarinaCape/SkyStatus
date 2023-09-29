@@ -1,11 +1,9 @@
 package com.skystatus.domain.sunset
 
-import com.skystatus.domain.entity.DawnType
-import com.skystatus.domain.entity.Sunset
-import com.skystatus.domain.entity.SunsetType
-import com.skystatus.domain.interactor.forecast.Get5DaysForecastUseCase
-import com.skystatus.domain.interactor.sunset.GetSunsetQualityUseCase
-import com.skystatus.domain.repository.ForecastRepository
+import com.skystatus.domain.model.DawnType
+import com.skystatus.domain.model.Sunset
+import com.skystatus.domain.model.SunsetType
+import com.skystatus.domain.use_case.sunset.GetSunsetQualityUseCase
 import com.skystatus.domain.repository.SunsetRepository
 import com.skystatus.utils.TestUtils
 import io.mockk.coEvery

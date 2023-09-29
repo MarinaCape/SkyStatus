@@ -5,8 +5,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.skystatus.databinding.BottomSheetDetailDayBinding
-import com.skystatus.databinding.BottomSheetMenuBinding
-import com.skystatus.domain.entity.DailyForecast
+import com.skystatus.domain.model.DailyForecast
 import com.skystatus.presentation.core.BottomSheetDialog
 import com.skystatus.presentation.utils.formatLocalDateTimeHours
 import kotlin.math.roundToInt

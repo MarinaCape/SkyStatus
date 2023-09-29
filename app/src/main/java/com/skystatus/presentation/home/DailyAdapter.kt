@@ -10,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.skystatus.R
-import com.skystatus.domain.entity.DailyForecast
-import com.skystatus.domain.entity.HourlyForecast
-import com.skystatus.presentation.utils.formatLocalDateTime
+import com.skystatus.domain.model.DailyForecast
 import java.time.format.TextStyle
 import java.util.Locale
 import kotlin.math.roundToInt

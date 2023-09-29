@@ -1,6 +1,6 @@
 package com.skystatus.domain.forecast
 
-import com.skystatus.domain.interactor.forecast.GetSearchCitiesUseCase
+import com.skystatus.domain.use_case.forecast.GetSearchCitiesUseCase
 import com.skystatus.domain.repository.ForecastRepository
 import com.skystatus.utils.TestUtils
 import io.mockk.coEvery

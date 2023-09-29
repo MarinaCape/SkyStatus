@@ -1,7 +1,7 @@
-package com.skystatus.domain.interactor.sunset
+package com.skystatus.domain.use_case.sunset
 
 import com.skystatus.domain.core.UseCase
-import com.skystatus.domain.entity.Sunset
+import com.skystatus.domain.model.Sunset
 import com.skystatus.domain.repository.SunsetRepository
 import javax.inject.Inject
 

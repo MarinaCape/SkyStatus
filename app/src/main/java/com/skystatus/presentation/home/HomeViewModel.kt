@@ -1,11 +1,10 @@
 package com.skystatus.presentation.home
 
-import android.location.LocationRequest
 import com.skystatus.data.service.SettingsService
 import com.skystatus.domain.core.fold
-import com.skystatus.domain.entity.City
-import com.skystatus.domain.interactor.forecast.Get12HoursForecastUseCase
-import com.skystatus.domain.interactor.forecast.Get5DaysForecastUseCase
+import com.skystatus.domain.model.City
+import com.skystatus.domain.use_case.forecast.Get12HoursForecastUseCase
+import com.skystatus.domain.use_case.forecast.Get5DaysForecastUseCase
 import com.skystatus.presentation.core.BaseViewModel
 import com.skystatus.presentation.home.model.ForecastUI
 import dagger.hilt.android.lifecycle.HiltViewModel

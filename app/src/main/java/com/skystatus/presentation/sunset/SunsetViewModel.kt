@@ -1,10 +1,8 @@
 package com.skystatus.presentation.sunset
 
 import com.skystatus.domain.core.fold
-import com.skystatus.domain.interactor.forecast.GetSearchCitiesUseCase
-import com.skystatus.domain.interactor.sunset.GetSunsetQualityUseCase
+import com.skystatus.domain.use_case.sunset.GetSunsetQualityUseCase
 import com.skystatus.presentation.core.BaseViewModel
-import com.skystatus.presentation.location.LocationViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

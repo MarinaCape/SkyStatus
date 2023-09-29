@@ -4,10 +4,10 @@ import app.cash.turbine.test
 import com.skystatus.data.service.SettingsService
 import com.skystatus.domain.core.failureOf
 import com.skystatus.domain.core.successOf
-import com.skystatus.domain.entity.DailyForecast
-import com.skystatus.domain.entity.HourlyForecast
-import com.skystatus.domain.interactor.forecast.Get12HoursForecastUseCase
-import com.skystatus.domain.interactor.forecast.Get5DaysForecastUseCase
+import com.skystatus.domain.model.DailyForecast
+import com.skystatus.domain.model.HourlyForecast
+import com.skystatus.domain.use_case.forecast.Get12HoursForecastUseCase
+import com.skystatus.domain.use_case.forecast.Get5DaysForecastUseCase
 import com.skystatus.utils.TestUtils
 import io.kotest.matchers.should
 import io.kotest.matchers.types.instanceOf

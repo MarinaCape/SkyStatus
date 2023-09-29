@@ -1,6 +1,5 @@
-package com.skystatus.domain.entity
+package com.skystatus.domain.model
 
-import com.skystatus.data.api.forecast.model.daily.WindGustResponse
 import java.time.LocalDateTime
 
 data class DailyForecast(
